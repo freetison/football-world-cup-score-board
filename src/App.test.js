@@ -1,9 +1,10 @@
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
+import { renderWithProviders } from "./app/utils/test-utils";
 import App from "./App";
 
 describe("<App />", () => {
   test("it should render Header", () => {
-    render(<App />);
+    renderWithProviders(<App />);
 
     const header = screen.getByTestId("Header");
 
@@ -11,7 +12,7 @@ describe("<App />", () => {
   });
 
   test("it should render Scoreboard", () => {
-    render(<App />);
+    renderWithProviders(<App />);
 
     const scoreboard = screen.getByTestId("Scoreboard");
 
