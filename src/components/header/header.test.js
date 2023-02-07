@@ -5,7 +5,7 @@ import Header from "./Header";
 
 describe("<Header />", () => {
   beforeEach(() => {
-    render(<Header title="Scoreboard" style={{}}></Header>);
+    render(<Header title="Scoreboard" style={{ flex: "0 0 100%" }}></Header>);
   });
 
   afterEach(cleanup);
@@ -23,6 +23,8 @@ describe("<Header />", () => {
   test("it should have style applied", () => {
     const header = screen.getByTestId("Header");
     const styles = getComputedStyle(header);
-    expect(styles.display).toBe("flex");
+
+    expect(styles.display).toBe("block");
+    expect(styles.flex).toBe("0 0 100%");
   });
 });
