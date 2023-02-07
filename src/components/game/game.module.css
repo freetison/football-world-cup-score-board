@@ -1,0 +1,29 @@
+.Game {
+    position: relative;
+    background-color: aqua;
+    height: 100px;
+    border: 1px solid gray;
+    border-radius: 3px;
+    margin-bottom: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+div {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    
+}
+
+div span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    text-align: center;
+}
+
+

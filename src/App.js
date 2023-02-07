@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <div className="row">
-        <Header title="Scoreboard" style={{}}></Header>
+        <Header title="Scoreboard" style={{ flex: "0 0 100%" }}></Header>
       </div>
 
       <div className="row">

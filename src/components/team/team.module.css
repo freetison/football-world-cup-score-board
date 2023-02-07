@@ -1,0 +1,7 @@
+.Team {
+    background-color: rgb(0, 123, 255);
+    margin: 5px 5px 5px;
+    height:70px;
+    min-width: 45%;
+    align-self: center;
+}
