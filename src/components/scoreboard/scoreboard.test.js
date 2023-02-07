@@ -1,14 +1,13 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { screen, cleanup } from "@testing-library/react";
 import { renderWithProviders } from "../../app/utils/test-utils";
 import "@testing-library/jest-dom/extend-expect";
-import configureStore from "redux-mock-store";
 import * as reactRedux from "react-redux";
 import Scoreboard from "./Scoreboard";
 
 describe("<Scoreboard />", () => {
-  const mockStore = configureStore();
-  const mockGames = {
+  const mockStore = {
     games: [
       {
         id: 1,
@@ -24,14 +23,25 @@ describe("<Scoreboard />", () => {
       },
     ],
   };
-  const useSelectorMock = jest.spyOn(reactRedux, "useSelector");
+
+  const useSelectorMock = reactRedux.useSelector;
+  const useDispatchMock = reactRedux.useDispatch;
+
+  // jest.mock("react-router");
+  // const useSelectorMock = useSelector;
+
+  jest.mock("react-redux", () => ({
+    useSelector: jest.fn(),
+    useDispatch: jest.fn(),
+  }));
 
   beforeEach(() => {
-    useSelectorMock.mockClear();
     renderWithProviders(<Scoreboard />);
   });
 
-  afterEach(cleanup);
+  afterEach(() => {
+    cleanup;
+  });
 
   test("it should mount", () => {
     const scoreboard = screen.getByTestId("Scoreboard");
@@ -39,8 +49,7 @@ describe("<Scoreboard />", () => {
   });
 
   test("it should have get data from store", () => {
-    useSelectorMock.mockReturnValue(mockGames);
-    const scoreboard = screen.getByTestId("Scoreboard");
-    expect(scoreboard).toBeInTheDocument();
+    const stadium = screen.getByText("Estadio Azteca");
+    expect(stadium).toBeInTheDocument();
   });
 });

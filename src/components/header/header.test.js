@@ -1,11 +1,14 @@
 import React from "react";
 import { cleanup, render, screen } from "@testing-library/react";
+import { renderWithProviders } from "../../app/utils/test-utils";
 import "@testing-library/jest-dom/extend-expect";
 import Header from "./Header";
 
 describe("<Header />", () => {
   beforeEach(() => {
-    render(<Header title="Scoreboard" style={{ flex: "0 0 100%" }}></Header>);
+    renderWithProviders(
+      <Header title="Scoreboard" style={{ flex: "0 0 100%" }}></Header>
+    );
   });
 
   afterEach(cleanup);

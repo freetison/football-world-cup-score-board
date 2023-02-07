@@ -1,14 +1,10 @@
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 import boardReducer from "./features/board/boardSlice";
 import summaryReducer from "./features/summary/summarySlice";
 
-const rootReducer = combineReducers({
-  board: boardReducer,
-  summary: summaryReducer,
-});
-
 export const store = configureStore({
-  reducer: rootReducer,
+  reducer: {
+    board: boardReducer,
+    summary: summaryReducer,
+  },
 });
-
-export default rootReducer;
