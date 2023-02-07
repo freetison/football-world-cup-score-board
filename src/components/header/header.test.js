@@ -1,20 +1,22 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { cleanup, render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import Header from "./Header";
 
-const setup = () => render(<Header />);
-
 describe("<Header />", () => {
+  beforeEach(() => {
+    render(<Header title="Scoreboard"></Header>);
+  });
+
+  afterEach(cleanup);
+
   test("it should mount", () => {
-    setup();
-    const header = screen.getByTestId("Header");
+    const header = screen.getByText("Scoreboard");
     expect(header).toBeInTheDocument();
   });
 
   test("it should display a title", () => {
-    setup();
-    const header = screen.getByText(/Scoreboard/i);
-    expect(header).toBeInTheDocument();
+    const headerText = screen.queryByText(/Scoreboard/i);
+    expect(headerText).toBeInTheDocument();
   });
 });

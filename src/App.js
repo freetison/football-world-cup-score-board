@@ -5,7 +5,7 @@ function App() {
   return (
     <>
       <div className="row">
-        <Header></Header>
+        <Header title="Scoreboard"></Header>
       </div>
     </>
   );
