@@ -7,11 +7,7 @@ const Scoreboard = () => {
 
   return (
     <>
-      <div className={styles.Scoreboard} data-testid="Scoreboard">
-        {boardData.map((game) => {
-          return <div key={game.id}></div>;
-        })}
-      </div>
+      <div className={styles.Scoreboard} data-testid="Scoreboard"></div>
     </>
   );
 };

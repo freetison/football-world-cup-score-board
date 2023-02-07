@@ -9,6 +9,7 @@ const initialStateBoard = games.map((g) => ({
 const boardSlice = createSlice({
   name: "board",
   initialState: initialStateBoard,
+  reducers: {},
 });
 
 export default boardSlice.reducer;
