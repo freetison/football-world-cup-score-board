@@ -40,4 +40,12 @@ describe("<Game />", () => {
     userEvent.click(button);
     expect(button).not.toBeInTheDocument();
   });
+
+  test("should show the button after Game Start", () => {
+    const startButton = screen.getByRole("button", { name: "Start" });
+    userEvent.click(startButton);
+
+    const goalButton = screen.queryAllByText("make a goal")[0];
+    expect(goalButton).toBeInTheDocument();
+  });
 });

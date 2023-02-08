@@ -1,5 +1,5 @@
 import React from "react";
-import { cleanup, render, screen } from "@testing-library/react";
+import { cleanup, screen } from "@testing-library/react";
 import { renderWithProviders } from "../../app/utils/test-utils";
 import "@testing-library/jest-dom/extend-expect";
 import Header from "./Header";

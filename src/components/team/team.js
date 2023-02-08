@@ -13,8 +13,8 @@ const Team = ({ name, type, begin, goalNotifier }) => {
 
   return (
     <div className={styles.Team} data-testid="Team">
-      <span>{name}</span>
-      <span>{score}</span>
+      <span data-test-id="teamName">{name}</span>
+      <span data-test-id="score">{score}</span>
       {begin && <button onClick={handlerBtn}>make a goal</button>}
     </div>
   );

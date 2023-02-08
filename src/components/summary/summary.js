@@ -3,10 +3,7 @@ import styles from "./summary.module.css";
 import { useSelector } from "react-redux";
 
 const Summary = () => {
-  // const [totalScore, setTotalScore] = useState([]);
   const gameResults = useSelector((state) => state.summary);
-
-  console.log("filters", gameResults);
 
   const totalScore = gameResults
     .map((item) => ({
