@@ -38,6 +38,6 @@ describe("<Game />", () => {
     const button = screen.getByRole("button", { name: "Start" });
 
     userEvent.click(button);
-    expect(button).toBeInTheDocument();
+    expect(button).not.toBeInTheDocument();
   });
 });
